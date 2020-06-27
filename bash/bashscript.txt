@@ -1,0 +1,10 @@
+nohup find /p01/repository/ -type f -mtime +calcdays -a ! -name -print \*.gif -exec rm {} \; &
+
+tail -f nohup.out
+
+
+[web@NTCP-PANRSQL01 ~]$ for each in panmabo0{1,2} panmibo0{1,2,3,4,6,7};do echo ${each}; ssh ${each} mv /home/httpd/scripts/bin/ready_task_helper.php /home/httpd/scripts/bin/ready_task_helper.php.backup; scp -p ready_task_helper.php ${each}:/home/httpd/scripts/bin/ ls
+.; done
+
+
+for url in $(cat list_of_urls.txt); do

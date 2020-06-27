@@ -1,0 +1,29 @@
+algo
+
+1. return unique words within in a string
+
+2. return the longest word in a string
+
+3. take in a string and return word reversed
+
+4. alpha index - take in a string representing alphabet letters and return number equivilant. example for 'a' return 1
+
+5. take in an array of strings and return a new array showing whether string length is even or odd. for example ['dad', 'made'] -> ['odd',even]
+
+6. create a function that takes an array of numbers and a number and count occurance of the number in a array for example [1,2,3,4,3], 3 => 2
+
+7. take in a word and return previous letter of each word. for example 'def' => 'cde'
+
+
+++++++++++++++++++++++++++++++++++++
+
+scripting
+
+1. create a script that takes 2 arguments filename, directory and sees if the file exists within that directory
+
+2. create a script that prompts user to restart a service
+
+3. create a script that reads a file and prints it
+
+4. create a script that will create a backup of a file. the script should create a directory if it does not exist. if it exists echo 'directory exists'. then copy the file to that directory.	
+
