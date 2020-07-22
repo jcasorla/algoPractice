@@ -1,0 +1,10 @@
+Good morning. A lot of people have been asking me about interview prep strategies as well as how to get better at algorithms. Thought this message I gave to someone might be beneficial to at least understand my strategy of learning DS&A. Best of luck to you guys. I’m hearing so many great things. It’s been really encouraging for me to become a better engineer
+
+Message:
+"So the advice that was passed to me is to not spend more than 20 min on a challenge without making progress. After 20 min, go look at the solution.
+
+My twist on the that is that it is beneficial to “understand” as many solutions as possible. The reason I say this is that by understanding the benefits and drawbacks of each solution, I start to see patterns where I can detect optimizations I can do.
+
+Carrying this to today while doing coding competitions, I literally come up with a brute force approach and think to myself, “I’ve seen this solution before and they optimized it by doing this”
+
+Hope this helps you create your own strategy that works for you and you land a job with your dream company. Keep going ??"
