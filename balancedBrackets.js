@@ -10,6 +10,7 @@ function balancedBrackets(str){
         }
         else {
             let last = stack.pop();
+            console.log(last);
 
             //If the popped element from the stack, which is the last opening brace doesn’t match the corresponding closing brace in the map, then return false
             if (str[i] !== map[last]) {return false};
@@ -24,7 +25,7 @@ function balancedBrackets(str){
 }
 
 // console.log(balancedBrackets('[({})]'));
-console.log(balancedBrackets('[]}({)]'));
+// console.log(balancedBrackets('[]}({)]'));
 // console.log(balancedBrackets('}[({})]'));
 
 
