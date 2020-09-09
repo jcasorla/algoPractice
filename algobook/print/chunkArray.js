@@ -17,7 +17,7 @@ function chunkArray(arr,size){
     return chunk;
 }
 
-console.log(chunkArray([1,2,3,4,1],2));
+console.log(chunkArray([1,2,3,4,1],3));
 
 //myway
 // function chunkArray2(arr,size){
