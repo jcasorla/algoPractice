@@ -2,7 +2,7 @@
 
 function fourNumberSum(array, targetSum) {
 	const pairs = {};
-	const quad = [];
+	let quad = [];
 	
 	for(let i = 1; i < array.length-1; i++){
 		for(let j = i+1; j < array.length; j++){
@@ -13,7 +13,7 @@ function fourNumberSum(array, targetSum) {
 			console.log(diff);
 			
 			if(pairs.hasOwnProperty(diff)){
-				console.log(pairs[diff]);
+				// console.log(pairs[diff]);
 				console.log(array[i] + ' ' + array[j])
 				for(const pair of pairs[diff]){
 					quad.push(pair.concat([array[i],array[j]]));
@@ -29,16 +29,66 @@ function fourNumberSum(array, targetSum) {
 			if(!pairs.hasOwnProperty(cur)){
 				pairs[cur] = [[array[k], array[i]]];
 			}else{
-				pairs[cur].push([array[k],array[i]]);
+				if(!Object.values(pairs[cur].includes([array[k],array[i]]))){
+					pairs[cur].push([array[k],array[i]]);
+				}
+				
 			}
-			console.log(array[k] + ' ' + array[i])
+			// console.log(array[k] + ' ' + array[i])
 			//console.log(pairs);
 		}
 	}
 	console.log(pairs);
+	// let x = {};
+	// quad.forEach((i)=> {
+	//   if(!x[i]) {
+	// 	x[i] = true
+	//   }
+	// })
+
+
+	// function removeDuplicates(array) {
+	// 	array.splice(0, array.length, ...(new Set(array)))
+	//   };
+	  
+
+	// return quad.splice(0, quad.length, ...(new Set(quad)))
+	// return Object.keys(x);
 	
-	return quad;
+	  
+	return removeDuplicates(quad)
 	
 }
 
-console.log(fourNumberSum([7, 6, 4, -1, 1, 2], 16))
+// function removeDuplicates(array) {
+// 	let a =[];
+	
+// 	for(let i =0; i<array.length; i++){
+// 		if(JSON.stringify(array[i]) !== JSON.stringify(array[i+1])) a.push(array[i]);
+// 		// if(!a.includes(JSON.stringify(array[i]))) a.push(array[i]);
+// 		console.log(a)
+// 	}
+// 	return a;
+	
+// };
+
+// function removeDuplicates(array) {
+// 	return [...new Set(array)]
+//   }
+function removeDuplicates(arr){
+	let map = {};
+
+	arr.forEach(data=>{
+		let sorted = data.sort((a,b)=>{return a-b})
+		if(!map.hasOwnProperty(sorted)){
+			map[sorted] = sorted;
+		}
+	});
+	let res = Object.values(map);
+
+	return res;
+}
+
+// console.log(fourNumberSum([7, 6, 4, -1, 1, 2], 16))
+
+console.log(fourNumberSum([-2,-1,-1,1,1,2,2], 0))

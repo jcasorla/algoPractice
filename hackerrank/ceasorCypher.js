@@ -4,13 +4,13 @@
 // Original alphabet:      abcdefghijklmnopqrstuvwxyz
 // Alphabet rotated +3:    defghijklmnopqrstuvwxyzabc
 
-function caesarCipher(s,k){
-    let alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
+// function caesarCipher(s,k){
+//     let alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-    console.log(alpha[26+k]);
-}
+//     console.log(alpha[26+k]);
+// }
 
-console.log(caesarCipher('z',2));
+// console.log(caesarCipher('z',2));
 
 
 // function caesarCipher(s, k) {
@@ -94,3 +94,57 @@ console.log(caesarCipher('z',2));
 //     }
 //    return finalResult;
 // }
+
+
+
+// Complete the caesarCipher function below.
+function caesarCipher(s, k) {
+
+    //middle-Outz,2 ->okffng-Qwvb
+
+    /**
+     *     10
+
+    159357lcfd
+
+    98
+
+Expected Output
+Download
+
+    159357fwzx
+     */
+    const alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    let newWord = '';
+    
+    for(let i =0; i<s.length; i++){
+        let ch = s[i];
+        let flag = false;
+        if (k > 26) {
+            k = k % 26;
+        }
+        if(ch === ch.toUpperCase()) flag = true; 
+        if((s.charCodeAt(i) >= 97 && s.charCodeAt(i) <=122) || (s.charCodeAt(i) >= 65 && s.charCodeAt(i) <=90)){
+             let rotate = alpha.indexOf(ch.toLowerCase()) + k;
+            rotate = rotate % 26;     
+            if(flag){
+                newWord += alpha[rotate].toUpperCase();
+            }else{
+                newWord += alpha[rotate];
+            }
+                  
+            
+
+        }else{
+            newWord+=s[i];
+        }
+        
+        
+    }
+    return newWord;
+
+
+}
+
+console.log(caesarCipher('159357lcfd',2))
+console.log(caesarCipher('159357lcfd',98)) //159357fwzx
