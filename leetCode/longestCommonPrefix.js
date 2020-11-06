@@ -26,3 +26,22 @@ var longestCommonPrefix = function(strs) {
     }
     return prefix === undefined ? '' : prefix;
 };
+
+function longestCommonPrefix2(strs){
+    let longest = '';
+    if(!strs || strs.length== 0)
+        return longest;
+    
+    let idx = 0;
+
+    for(let c of strs[0]){
+        for(let i =1; i < strs.length; i++){
+            if(idx >= strs[i].length || c !== strs[i][idx])
+                return longest;
+        }
+        longest += c;
+        idx++;
+    }
+}
+
+console.log(longestCommonPrefix2(['flower','flow','flight']));
