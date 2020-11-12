@@ -20,7 +20,7 @@ Libs included:
 //    if(val >0)
 //        false
 // return true
-// constant time
+// linear
 
 /**
 function isAnagram(s1,s2){
