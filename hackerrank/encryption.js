@@ -60,3 +60,5 @@ function readMatrix(matrix,dim){
 // console.log(encryption('chillout'));//clu hlt io
 console.log(encryption('iffactsdontfittotheorychangethefacts'));//isieae fdtonf fotrga anoyec cttctt tfhhhs
 //35 row = 5, col 6
+
+//python solution https://www.thepoorcoder.com/hackerrank-encryption-solution/
