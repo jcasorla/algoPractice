@@ -90,6 +90,7 @@
 //   return max;
 // }
 
+//O(N) time | O(1) space
 function longestBalancedSubstring(string) {
   let max = 0;
 
