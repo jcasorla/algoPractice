@@ -50,22 +50,55 @@
 //     return "YES";
 // }
 
+// function happyLadybugs(b) {
+//   const map = {};
+//   let count = 0;
+//   let running = b[0];
+//   let c = 0;
+//   let balanced = true;
+//   for (let ch of b) {
+//     if (ch === running) {
+//       c++;
+//     } else {
+//       if (c < 1) {
+//         balanced = false;
+//       }
+//       running = ch;
+//       c = 1;
+//     }
+//     if (ch !== "_") {
+//       if (map.hasOwnProperty(ch)) {
+//         map[ch] += 1;
+//       } else {
+//         map[ch] = 1;
+//       }
+//     } else {
+//       count++;
+//     }
+//   }
+
+//   if (count > 0) {
+//     for (let key in map) {
+//       const char = map[key];
+
+//       if (char === 1) {
+//         return "NO";
+//       }
+//     }
+//     return "YES";
+//   } else {
+//     //already balanced?
+//     // return balanced === true ? 'YES' : 'NO';
+//     return "NO";
+//   }
+// }
+
+//optimal 0(N) | 0(1):
+
 function happyLadybugs(b) {
   const map = {};
-  let count = 0;
-  let running = b[0];
-  let c = 0;
-  let balanced = true;
+  let spaces = false;
   for (let ch of b) {
-    if (ch === running) {
-      c++;
-    } else {
-      if (c < 1) {
-        balanced = false;
-      }
-      running = ch;
-      c = 1;
-    }
     if (ch !== "_") {
       if (map.hasOwnProperty(ch)) {
         map[ch] += 1;
@@ -73,22 +106,26 @@ function happyLadybugs(b) {
         map[ch] = 1;
       }
     } else {
-      count++;
+      spaces = true;
     }
   }
 
-  if (count > 0) {
-    for (let key in map) {
-      const char = map[key];
+  if (!spaces) {
+    //If there are no spaces, all the ladybugs should have an equal partner
 
-      if (char === 1) {
+    for (let i = 1; i < b.length - 1; i++) {
+      if (b.charAt(i) != b.charAt(i - 1) && b.charAt(i) != b.charAt(i + 1)) {
         return "NO";
       }
     }
-    return "YES";
-  } else {
-    //already balanced?
-    // return balanced === true ? 'YES' : 'NO';
-    return "NO";
   }
+
+  for (let key in map) {
+    const char = map[key];
+
+    if (char === 1) {
+      return "NO";
+    }
+  }
+  return "YES";
 }
