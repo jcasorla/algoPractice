@@ -23,7 +23,7 @@ function sumStr(res1, res2) {
     }
     res.push(sum);
     sum = 0;
-    j++;
+    j--;
   }
 
   return res.reverse().join("");
