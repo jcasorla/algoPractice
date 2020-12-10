@@ -116,11 +116,19 @@ function minHeightBst(array) {
 
   return bst;
 }
+/**root = 5
+      2  
+   1     3
+            4
+//1 2 3 4 5 6 7 8 9
+//    x
+
+/*
 function leftHalf(arr, left, right) {
   while (left < right) {
     const midIdx = Math.floor(left + (right - left) / 2);
     bst.insert(arr[midIdx]);
-    //call left
+
     //call right
   }
 }
@@ -129,6 +137,5 @@ function rightHalf(arr, left, right) {
     const midIdx = Math.floor(left + (right - left) / 2);
     bst.insert(arr[midIdx]);
     //call left
-    //call right
   }
 }
