@@ -2,6 +2,7 @@
 // populateSuffixTrieFrom and contains methods.
 // Feel free to add new properties and methods
 // to the class.
+//https://www.algoexpert.io/questions/Suffix%20Trie%20Construction
 class SuffixTrie {
   constructor(string) {
     this.root = {};
