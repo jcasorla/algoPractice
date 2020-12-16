@@ -26,6 +26,7 @@ function shorttestSubArraywithLargestSum(arr, target) {
   let len = arr.length;
   let globalSum = 0;
   let sum = 0;
+  let res = { 0: 0 };
   while (p1 < len) {
     p2;
   }
