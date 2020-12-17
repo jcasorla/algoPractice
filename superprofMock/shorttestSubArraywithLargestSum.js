@@ -20,31 +20,31 @@
 
 //cadance algo
 
-function shorttestSubArraywithLargestSum(arr, target) {
-  const len = arr.length;
-  const res = [];
-  //O(N)2
-  for (let i = 0; i < len; i++) {
-    let sum = arr[i];
-    if (sum > target) {
-      res.push([sum, 1]);
-    }
-    for (let j = i + 1; j < len; j++) {
-      const sublen = j - i + 1;
-      sum += arr[j];
+// function shorttestSubArraywithLargestSum(arr, target) {
+//   const len = arr.length;
+//   const res = [];
+//   //O(N)2
+//   for (let i = 0; i < len; i++) {
+//     let sum = arr[i];
+//     if (sum > target) {
+//       res.push([sum, 1]);
+//     }
+//     for (let j = i + 1; j < len; j++) {
+//       const sublen = j - i + 1;
+//       sum += arr[j];
 
-      if (sum > target) {
-        res.push([sum, sublen]);
-      }
-    }
-  }
-  let max = -Infinity;
-  for (let i = 0; i < res.length; i++) {
-    if (res[i][0] > max) max = res[i][0];
-  }
+//       if (sum > target) {
+//         res.push([sum, sublen]);
+//       }
+//     }
+//   }
+//   let max = -Infinity;
+//   for (let i = 0; i < res.length; i++) {
+//     if (res[i][0] > max) max = res[i][0];
+//   }
 
-  return res;
-}
+//   return res;
+// }
 
 //https://www.geeksforgeeks.org/minimum-length-subarray-sum-greater-given-value/
 function shorttestSubArraywithLargestSum(arr, target) {
