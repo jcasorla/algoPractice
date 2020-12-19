@@ -12,3 +12,4 @@ function multiStringSearch(bigString, smallStrings) {
   return res;
 }
 //still working
+//still here
