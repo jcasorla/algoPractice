@@ -119,3 +119,28 @@ var isSymmetric = function (root) {
 //     return true;
 
 // };
+
+//revised and works
+var isSymmetric = function (root) {
+  const queueA = [],
+    queueB = [];
+
+  queueA.push(root);
+  queueB.push(root);
+
+  while (queueA.length > 0 && queueB.length) {
+    const node1 = queueA.shift();
+    const node2 = queueB.shift();
+
+    if (node1 == null && node2 == null) continue;
+    if (node1 == null || node2 == null) return false;
+    if (node1.val != node2.val) return false;
+
+    queueA.push(node1.left);
+    queueB.push(node2.right);
+    queueA.push(node1.right);
+    queueB.push(node2.left);
+  }
+
+  return true;
+};
