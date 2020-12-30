@@ -14,3 +14,13 @@ function firstDuplicateValue(array) {
 
   return -1;
 }
+
+//0(N) | 0(1)
+function firstDuplicateValue(array) {
+  for (const val of array) {
+    const absVal = Math.abs(val);
+    if (array[absVal - 1] < 0) return absVal;
+    array[absVal - 1] *= -1;
+  }
+  return -1;
+}
