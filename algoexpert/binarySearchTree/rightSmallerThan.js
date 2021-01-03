@@ -50,7 +50,7 @@ class SpecialBST {
     this.right = null;
   }
 
-  insert(value, idx, numSmallerAtInsertTime) {
+  insert(value, idx, numSmallerAtInsertTime = 0) {
     if (value < this.value) {
       this.leftSubTreeSize++;
       if (!this.left) {
