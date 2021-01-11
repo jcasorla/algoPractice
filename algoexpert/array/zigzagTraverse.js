@@ -106,7 +106,7 @@
 
 // expect: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 //outcome: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-console.log(zigzagTraverse(array));
+// console.log(zigzagTraverse(array));
 
 //revise later
 // function zigzagTraverse(array) {
