@@ -40,7 +40,7 @@ class BST {
     }
   }
 
-  remove(value) {
+  remove(value, parent = null) {
     if (value < this.value) {
       if (this.left) {
         this.left.remove(value, this);
@@ -50,27 +50,30 @@ class BST {
         this.right.remove(value, this);
       }
     } else {
-      if (!this.left && !this.right) {
+      if (this.left && this.right) {
         this.value = this.right.getMinValue();
-        this.right.remove((this.value, this));
+        this.right.remove(this.value, this);
       } else if (!parent) {
-        if (!this.left) {
+        if (this.left) {
           this.value = this.left.value;
           this.right = this.left.right;
           this.left = this.left.left;
-        } else if (!this.right) {
+        } else if (this.right) {
           this.value = this.right.value;
           this.left = this.right.left;
           this.right = this.right.right;
+        } else {
+          this.value = null;
         }
-      } else if (!parent.left) {
-        parent.left = this.left ? this.left : this.right;
-      } else if (!parent.right) {
-        parent.right = this.left ? this.left : this.right;
+      } else if (parent.left === this) {
+        parent.left = this.left !== null ? this.left : this.right;
+      } else if (parent.right === this) {
+        parent.right = this.left !== null ? this.left : this.right;
       }
     }
     return this;
   }
+
   getMinValue() {
     if (!this.left) {
       return this.value;

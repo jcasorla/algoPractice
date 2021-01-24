@@ -4,26 +4,47 @@
  * @return {number}
  xiv
  */
-var romanToInt = function(s) {
-    let rome = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M': 1000};
-    let sum = 0;
-    let len = s.length;
-     
-    for(let i =len-1; i>=0; i--){
-        let cur = s[i];
-        let prev = s[i-1];
-        sum+=rome[cur];
-        if(prev ==='I' && (cur ==='V' || cur ==='X')){
-            sum-=rome[prev];
-            i--;
-        }else if(prev ==='X' && (cur ==='L' || cur ==='C')){
-            sum-=rome[prev];
-            i--;
-        }else if(prev ==='C' && (cur ==='D' || cur ==='M')){
-            sum-=rome[prev];
-            i--;
-        }
+var romanToInt = function (s) {
+  let rome = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  let sum = 0;
+  let len = s.length;
+
+  for (let i = len - 1; i >= 0; i--) {
+    let cur = s[i];
+    let prev = s[i - 1];
+    sum += rome[cur];
+    if (prev === "I" && (cur === "V" || cur === "X")) {
+      sum -= rome[prev];
+      i--;
+    } else if (prev === "X" && (cur === "L" || cur === "C")) {
+      sum -= rome[prev];
+      i--;
+    } else if (prev === "C" && (cur === "D" || cur === "M")) {
+      sum -= rome[prev];
+      i--;
     }
-    return sum;   
-    
+  }
+  return sum;
+};
+
+var romanToInt = function (s) {
+  romanSet = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+  let num = 0;
+  for (i = 0; i < s.length; i++) {
+    if (romanSet[s[i]] < romanSet[s[i + 1]]) {
+      num += romanSet[s[i + 1]] - romanSet[s[i]];
+      i++;
+    } else {
+      num = num + romanSet[s[i]];
+    }
+  }
+  return num;
 };
