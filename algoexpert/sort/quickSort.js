@@ -1,3 +1,6 @@
+//https://www.algoexpert.io/questions/Quick%20Sort
+//0(log(N)) | 0(log(N))
+//worst 0(N^2)
 function quickSort(array) {
   helper(array, 0, array.length - 1);
   return array;
