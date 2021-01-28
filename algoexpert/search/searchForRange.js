@@ -73,7 +73,7 @@ function alteredBinarySearch(arr, target, left, right, finalRange, goLeft) {
   while (left <= right) {
     const mid = Math.floor(left + (right - left) / 2);
     if (arr[mid] < target) {
-      let = mid + 1;
+      left = mid + 1;
     } else if (arr[mid] > target) {
       right = mid - 1;
     } else {
@@ -89,7 +89,7 @@ function alteredBinarySearch(arr, target, left, right, finalRange, goLeft) {
           finalRange[1] = mid;
           return;
         } else {
-          left - mid + 1;
+          left = mid + 1;
         }
       }
     }
