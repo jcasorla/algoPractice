@@ -76,3 +76,66 @@ function swap(i, j, arr) {
   arr[i] = arr[j];
   arr[j] = temp;
 }
+
+//algoexpert solution 1:
+//0(N) | 0(N)
+function reverseWordsInString(string) {
+  const words = [];
+  let start = 0;
+  for (let i = 0; i < string.length; i++) {
+    const char = string[i];
+    if (char === " ") {
+      words.push(string.slice(start, i));
+      start = i;
+    } else if (string[start] === " ") {
+      words.push(" ");
+      start = i;
+    }
+  }
+  words.push(string.slice(start));
+  reverseList(words);
+  return words.join("");
+}
+function reverseList(list) {
+  let start = 0,
+    end = list.length - 1;
+  while (start < end) {
+    const temp = list[start];
+    list[start] = list[end];
+    list[end] = temp;
+    start++;
+    end--;
+  }
+}
+
+//algoexpert solution 2:
+//0(N) | 0(N)
+
+function reverseWordsInString(string) {
+  const chars = [];
+
+  for (const char of string) {
+    chars.push(char);
+  }
+  reverseListRange(chars, 0, chars.length - 1);
+
+  let start = 0;
+  while (start < chars.length) {
+    let end = start;
+    while (end < chars.length && chars[end] !== " ") end++;
+
+    reverseListRange(chars, start, end - 1);
+    start = end + 1;
+  }
+  return chars.join("");
+}
+
+function reverseListRange(list, start, end) {
+  while (start < end) {
+    const temp = list[start];
+    list[start] = list[end];
+    list[end] = temp;
+    start++;
+    end--;
+  }
+}
