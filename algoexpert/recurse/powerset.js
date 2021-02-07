@@ -52,3 +52,32 @@ function powerset(array) {
   helper(array, 0);
   return sets;
 }
+
+function powerset(array) {
+  function helper(array, i, sets = [[]]) {
+    if (i >= array.length) {
+      return [[]];
+    }
+    const len = sets.length;
+    for (let j = 0; j < len; j++) {
+      const curset = sets[j];
+      sets.push(curset.concat(array[i]));
+    }
+    helper(array, i + 1, sets);
+    return sets;
+  }
+  return helper(array, 0);
+}
+
+function powerset(array, i = 0, sets = [[]]) {
+  if (i >= array.length) {
+    return [[]];
+  }
+  const len = sets.length;
+  for (let j = 0; j < len; j++) {
+    const curset = sets[j];
+    sets.push(curset.concat(array[i]));
+  }
+  powerset(array, i + 1, sets);
+  return sets;
+}
