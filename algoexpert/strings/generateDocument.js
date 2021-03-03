@@ -27,7 +27,7 @@ function generateDocument(characters, document) {
 //algoexpert solutions
 
 //solution 1:
-
+// 0(m * (n + m)) | 0(1)
 function generateDocument(characters, document) {
   for (const char of document) {
     const documentFrequency = countCharFreq(char, document);
@@ -47,7 +47,7 @@ function countCharFreq(char, target) {
 }
 
 //solution 2:
-
+// 0(c * (n + m)) | 0(c)
 function generateDocument(characters, document) {
   const alreadyCounted = new Set();
 
