@@ -81,3 +81,17 @@ var restoreString = function (s, indices) {
 
   return word;
 };
+
+// 0(n) | 0(n)
+var restoreString = function (s, indices) {
+  let shuffled = new Array(indices.length);
+
+  for (let i = 0; i < indices.length; i++) {
+    const char = s[i];
+    const to = indices[i];
+
+    shuffled[to] = char;
+  }
+
+  return shuffled.join("");
+};
