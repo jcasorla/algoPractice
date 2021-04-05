@@ -65,7 +65,7 @@ function mergeOverlappingIntervals(array) {
   const mergedIntervals = [];
 
   let curInterval = sortedArr[0];
-  mergedIntervals.push(sortedArr);
+  mergedIntervals.push(curInterval);
 
   for (const nextInterval of sortedArr) {
     const [_, curIntervalEnd] = curInterval;
