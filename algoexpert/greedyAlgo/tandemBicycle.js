@@ -1,5 +1,7 @@
 //https://www.algoexpert.io/questions/Tandem%20Bicycle
 
+//0(nlog(n)) | 0(1)
+
 function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
   if (fastest) {
     redShirtSpeeds.sort((a, b) => a - b);
