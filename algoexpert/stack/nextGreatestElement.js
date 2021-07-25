@@ -24,3 +24,5 @@ function nextGreaterElement(array) {
   }
   return result;
 }
+
+console.log(nextGreaterElement([2, 5, -3, -4, 6, 7, 2])); // [5, 6, 6, 6, 7, -1, 5]
